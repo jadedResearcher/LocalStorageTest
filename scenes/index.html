@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>An experiment with story telling with HTML 5 Local Storage. </title>
+		<script type = "text/javascript" src = "../javascripts/jquery-1.7.1.min.js"></script>
+		<script type = "text/javascript" src = "../javascripts/local_storage_controller.js"></script>
+		<script>
+			window.onload = function(){
+				$("#table_of_contents").html(htmlForContents());
+			}
+		</script>
+	</head>
+
+	<body>
+		<a href = "#" onclick="wipeEverything()">Start Over?</a>
+		<div id = "table_of_contents">  </div>
+	</body>
+</html>
+
+
+

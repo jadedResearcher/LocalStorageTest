@@ -1,0 +1,13 @@
+//each scene is responsible for knowing how to write things onto screen (including links)
+
+
+function getSceneHTML(){
+	var ret = "You...really ARE discerning!  I never told you 'out of how many', and you abstained from guessing!  Of course, it could have just been an accident, but in either case, congratulations!  The number was: " + localStorage.random_number+".<br><br>";
+	if(localStorage.random_number > 100){
+		ret += "Which means you would have not had the implied 50/50 odds of guessing higher or lower."
+	}else{
+		ret += " Which means you would actually have had the implied 50/50 odds of guessing higher or lower.  Still, abstaining was the right bet."
+	}
+
+	return ret;
+}

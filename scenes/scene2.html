@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>An experiment with story telling with HTML 5 Local Storage. </title>
+		<script type = "text/javascript" src = "../javascripts/jquery-1.7.1.min.js"></script>
+		<script type = "text/javascript" src = "../javascripts/local_storage_controller.js"></script>
+		<script type = "text/javascript" src = "../javascripts/scene_scripts/scene2.js"></script>
+		<script>
+			var title = localStorage.username+ "'s story";
+			var scene = "";
+			window.onload = function(){
+				scene = window.location.pathname.split('/').pop();
+				saveSceneToContents(scene,title);
+				var url_vars = getUrlVars();
+				saveLastSceneToCompleted(url_vars["completed"]);
+				$("#scene").html(getSceneHTML());
+				if(!isSceneCompleted(scene)){
+					setTimeout(function(){ window.location = "scene5.html?completed="+scene; }, 10000);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id = "scene"> </div>
+		<br><br><hr>
+		<a href = "index.html"> Table of Contents </a>
+	</body>
+</html>
